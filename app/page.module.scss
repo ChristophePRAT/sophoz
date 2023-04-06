@@ -1,0 +1,143 @@
+// The top screen
+.subtitle {
+  font-size: 10vh;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin: -10vh 0;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 40vh;
+  font-weight: 400;
+  margin-bottom: 6vh;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
+  color: var(--text-color-title);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.heading {
+  font-size: 7vh;
+  font-weight: 500;
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.topSection {
+  text-align: center;
+  margin: auto;
+  font-size: 1.5rem;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-top);
+  color: var(--text-color-top);
+}
+
+.chevron {
+  stroke: #aaa;
+  animation: bounce 1s infinite alternate;
+  animation-delay: 3s;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 30vw;
+  }
+  .subtitle {
+    font-size: 2rem;
+  }
+  .heading {
+    font-size: 1rem;
+  }
+}
+
+.backgroudText {
+  position: relative;
+  width: 100%;
+  color: gray;
+  opacity: 0.1;
+  font-size: 6vw;
+  font-weight: 800;
+  line-height: 0.9;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify;
+  overflow: hidden;
+  select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  object-fit: cover;
+}
+
+
+.sectionTitle {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.section {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      margin: 0.5rem 1rem;
+    }
+  }
+  .heading {
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .pitch {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+}
+.article {
+  z-index: 10;
+  top: 0;
+  position: absolute;
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+
+}
+
