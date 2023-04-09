@@ -1,7 +1,7 @@
 // The top screen
 .subtitle {
   font-size: 10vh;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.1rem;
   margin: -10vh 0;
   opacity: 0.8;
@@ -11,14 +11,14 @@
   font-size: 40vh;
   font-weight: 400;
   margin-bottom: 6vh;
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
+  font-family: var(--garamond-font), Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
   color: var(--text-color-title);
   animation: fadeIn 1s ease-in-out;
 }
 
 .heading {
   font-size: 7vh;
-  font-weight: 500;
+  font-weight: 300;
   opacity: 0.8;
   font-weight: 600;
 }
@@ -81,10 +81,11 @@
 .backgroudText {
   position: relative;
   width: 100%;
-  color: gray;
-  opacity: 0.1;
-  font-size: 6vw;
-  font-weight: 800;
+  max-height: 70vh;
+  color: #666;
+  opacity: 0.4;
+  font-size: 20px;
+  font-weight: 200;
   line-height: 0.9;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -99,6 +100,8 @@
   -ms-user-select: none;
   -webkit-touch-callout: none;
   object-fit: cover;
+
+  clip-path: circle(var(--circle-offset) at 50% 50%);
 }
 
 
@@ -112,32 +115,78 @@
   position: relative;
   font-size: 1rem;
   font-weight: 500;
-  margin-bottom: 1rem;
-  ul {
-    padding: 0;
-    margin: 0;
-    li {
-      margin: 0.5rem 1rem;
-    }
-  }
+  margin-bottom: 1.5rem;
   .heading {
     font-size: 5rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  .pitch {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
   }
 }
+.pitch {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 2;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  padding: 0 5rem;
+}
+
 .article {
   z-index: 10;
   top: 0;
   position: absolute;
-  margin: 10px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
-
 }
 
+.footer {
+  border-top: 1px solid #888;
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+.main {
+  font-family: var(--inter-font)
+}
+.scrollSection {
+  position: relative;
+  height: 300vh; 
+}
+
+.hardToReadSection, .tooSparseSection {
+  display: flex;
+  flex-direction: line;
+  position: sticky;
+  align-items: center;
+  top: 0;
+  height: 100vh;
+  * {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .hardToReadSection, .tooSparseSection {
+    flex-direction: column;
+    height: unset;
+  }
+}
+.right {
+  width: 50vw;
+  float: right;
+}
+.left {
+  width: 50vw;
+  float: left;
+}
