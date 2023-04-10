@@ -6,6 +6,10 @@ import { ChevronDown } from "react-feather"
 import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
 import articleContent from '../src/article'
+// Import IconsGathering dynamically
+const IconsGathering = dynamic(() => import('./iconsGathering'), {
+  ssr: false,
+})
 
 const garamond = EB_Garamond({
   variable: "--garamond-font",
@@ -27,14 +31,22 @@ const mainStyles = [styles.main, garamond.variable, inter.variable].join(' ')
 
 export default function Home() {
   const firstSectionRef = useRef(null)
+  const secondSectionRef = useRef(null)
   const [text, setText] = useState(articleContent)
+  const [circleRadius, setCircleRadius] = useState(100)
 
 
   const handleScroll = () => {
-      setText((text) => text.shuffle())
-      const percentageOfScroll = (1 - (firstSectionRef.current.offsetTop / firstSectionRef.current.offsetHeight) * 0.5) * Math.sqrt(2) * 50
-      console.log(percentageOfScroll)
-      document.documentElement.style.setProperty('--circle-offset', `${percentageOfScroll}%`)
+      const secondPercentage = (1 - (secondSectionRef.current.offsetTop / secondSectionRef.current.offsetHeight) * 0.5) * 100
+
+      if (secondPercentage === 100) {
+        if (Math.random() > 0.75) {
+          setText((text) => text.shuffle())
+        }
+
+      } else {
+        setCircleRadius(secondPercentage)
+      }
   }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -47,6 +59,9 @@ export default function Home() {
     <main className={mainStyles}>
       <section className={styles.topSection}>
         <h2 className={styles.subtitle}>Introducing</h2>
+        <div className={styles.noise}>
+        </div>
+
         <h1 className={styles.title}>Sophoz</h1>
         <h2 className={styles.heading}>Ordinary news for extraordinary people</h2>
       </section>
@@ -56,7 +71,7 @@ export default function Home() {
           <div className={styles.left}>
             <h2 className={styles.heading}>Hard to read</h2>
             <p className={styles.paragraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquet nisl, eget a semper nisl nisl eu nisl. Nul
+              News can be overwhelming. Dozens of paragraphs to say nothing. It should not be this hard to get informed.
             </p>
           </div>
           <div className={styles.right}>
@@ -65,14 +80,14 @@ export default function Home() {
         </section>
       </div>
       <div className={styles.scrollSection}>
-        <section className={styles.tooSparseSection}>
+        <section className={styles.tooSparseSection} ref={secondSectionRef}>
           <div className={styles.left}>
-            <p>asofdpijasdpoifj</p>
+            <IconsGathering percentage={circleRadius} />
           </div>
           <div className={styles.right}>
             <h2 className={styles.heading}>Too sparse</h2>
             <p className={styles.paragraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquet nisl, eget a semper nisl nisl eu nisl. Nul
+              Information is everywhere. <br /> And so is misinformation.<br /> You deserve better news. Using AI, we will clear out the noise.
             </p>
           </div>
         </section>

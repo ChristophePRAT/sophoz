@@ -5,11 +5,26 @@
   letter-spacing: 0.1rem;
   margin: -10vh 0;
   opacity: 0.8;
+  z-index: 1;
 }
+.noise {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+  filter: contrast(300%) brightness(1500%);
+  background: 
+conic-gradient(from 140deg at 10% 130%,
+rgba(0,0,0,1), 
+rgba(0,0,0,0)),
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: screen;
 
+}
 .title {
   font-size: 40vh;
   font-weight: 400;
+  z-index: 1;
   margin-bottom: 6vh;
   font-family: var(--garamond-font), Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
   color: var(--text-color-title);
@@ -81,12 +96,10 @@
 .backgroudText {
   position: relative;
   width: 100%;
-  max-height: 70vh;
   color: #666;
   opacity: 0.4;
   font-size: 20px;
   font-weight: 200;
-  line-height: 0.9;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -100,8 +113,7 @@
   -ms-user-select: none;
   -webkit-touch-callout: none;
   object-fit: cover;
-
-  clip-path: circle(var(--circle-offset) at 50% 50%);
+  border-radius: 10px;
 }
 
 
@@ -137,6 +149,14 @@
   position: absolute;
   width: 100vw;
   text-align: center;
+}
+.paragraph {
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  padding: 0 5rem;
 }
 
 .footer {
@@ -182,11 +202,21 @@
     height: unset;
   }
 }
-.right {
+.right, .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 50vw;
+  height: 100vh;
+  padding: 1rem;
+}
+.right {
   float: right;
+  align-items: flex-end;
+  text-align: right;
 }
 .left {
-  width: 50vw;
   float: left;
+  align-items: flex-start;
+  text-align: left;
 }
