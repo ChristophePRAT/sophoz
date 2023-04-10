@@ -17,13 +17,12 @@ const garamond = EB_Garamond({
 })
 const inter = Inter({
   variable: '--inter-font',
-  weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
   subsets: ["latin"],
 })
 
 // Create an string extension to shuffle the words
-String.prototype.shuffle = function () {
-  var a = this.split(" ")
+const shuffle = (str: string) => {
+  var a = str.split(" ")
   a.sort(() => Math.random() - 0.5)
   return a.join(" ")
 }
@@ -37,16 +36,19 @@ export default function Home() {
 
 
   const handleScroll = () => {
-      const secondPercentage = (1 - (secondSectionRef.current.offsetTop / secondSectionRef.current.offsetHeight) * 0.5) * 100
+    const element: any = secondSectionRef.current
+    if (element) {
+      const secondPercentage = (1 - (element.offsetTop / element.offsetHeight) * 0.5) * 100
 
       if (secondPercentage === 100) {
         if (Math.random() > 0.75) {
-          setText((text) => text.shuffle())
+          setText((text) => shuffle(text))
         }
 
       } else {
         setCircleRadius(secondPercentage)
       }
+    }
   }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)

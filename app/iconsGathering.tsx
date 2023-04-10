@@ -44,8 +44,7 @@ const icons = [
 		src: thenewyorker,
 	},
 ]
-export default function IconsGathering({ percentage, ...props }) {
-
+export default function IconsGathering({ percentage }: { percentage: number }) {
 	return (
 		<div style={{
 			height: "50vw",
