@@ -1,5 +1,4 @@
 :root {
-  --circle-offset: 10%;
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -11,8 +10,19 @@
     --text-color-top: #1B1D1C;
     --main-background: #f5f5f5;
     --text-color: #1B1D1C;
+    --heading-size: 3rem;
+    --body-size: 1.5rem;
+    --section-padding: 1.3rem;
+    --subtitle-size: 3.5rem;
 }
-
+@media (max-width: 768px) {
+  :root {
+    --heading-size: 1.3rem;
+    --body-size: 1.2rem;
+    --section-padding: 1rem;
+    --subtitle-size: 1.7rem;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
