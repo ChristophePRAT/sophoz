@@ -6,33 +6,32 @@
   margin: -6vh 0;
   opacity: 0.8;
   z-index: 1;
+  font-family: var(--serif-font);
 }
 .noise {
   width: 100%;
   position: absolute;
   height: 100%;
+  opacity: 0.2;
   z-index: 0;
-  filter: contrast(300%) brightness(1500%);
-  background: 
-conic-gradient(from 140deg at 10% 130%,
-rgba(0,0,0,1), 
-rgba(0,0,0,0)),
-  url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: screen;
-
+  filter: brightness(0.2);
+  background: url("data:image/svg+xml,%3Csvg  viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
+
 .title {
-  font-size: 30vw;
+  font-size: 26vw;
   font-weight: 400;
   z-index: 1;
   margin-bottom: 6vh;
-  font-family: var(--garamond-font), Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
+  font-family: var(--serif-font), Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
   color: var(--text-color-title);
+  text-shadow: 0 0 3vw #FFFFFF70;
   animation: fadeIn 1s ease-in-out;
 }
 
 .heading {
   font-size: var(--heading-size);
+  font-family: var(--serif-font);
   font-weight: 300;
   opacity: 0.8;
   font-weight: 600;
@@ -48,6 +47,7 @@ rgba(0,0,0,0)),
   align-items: center;
   background-color: var(--background-top);
   color: var(--text-color-top);
+  color-invert: 1;
   overflow: hidden;
 }
 
@@ -132,7 +132,7 @@ rgba(0,0,0,0)),
   }
 }
 .main {
-  font-family: var(--inter-font)
+  font-family: var(--sans-font);
 }
 .scrollSection {
   position: relative;

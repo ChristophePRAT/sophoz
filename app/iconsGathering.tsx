@@ -9,6 +9,8 @@ import huffpost from "../imgs/huffpost.svg"
 import time from "../imgs/time.png"
 import thenewyorker from "../imgs/thenewyorker.svg"
 import { useRef, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+const Logo = dynamic(() => import('./logo'), { ssr: false })
 
 const icons = [
 	{
@@ -54,21 +56,37 @@ export default function IconsGathering({ percentage }: { percentage: number }) {
 			}}>
 			{
 				icons.map((icon, index) => {
+					if (percentage > 0.5) return null
 					const angle = (index / icons.length) * Math.PI * 2
+					const percent = (1 - percentage * 2) * 100
 					// Percentage of top and right
-					const x = (Math.cos(angle)) * percentage
-					const y = (Math.sin(angle)) * percentage
-						return (
+					const x = (Math.cos(angle)) * percent
+					const y = (Math.sin(angle)) * percent 
+					return (
 							<Image key={index} src={icon.src} alt={icon.name} width={100} height={100} style={{
 									position: "absolute",
 									transform: 'translate(-50%, -50%)',
 									top: `${50 - y/2}%`,
 									left: `${50 + x/2}%`,
-									opacity: `${percentage/100}`,
+									opacity: `${percent}`,
 								}}
 							/>
 					)
 				})
+			}
+			{ percentage > 0.5 && 
+				<div style={{
+				position: "absolute",
+				transform: 'translate(-50%, -50%)',
+				top: "50%",
+				left: "50%",
+				width: "50%",
+				height: "50%",
+				padding: 0,
+					}}
+				>
+					<Logo />
+				</div>
 			}
 		</div>
 	)
