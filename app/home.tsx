@@ -1,11 +1,13 @@
 "use client"
 import Image from 'next/image'
 import styles from './page.module.scss'
-import { Playfair_Display, Urbanist, Cormorant, Inter } from "@next/font/google"
+import { Playfair_Display, Inter } from "@next/font/google"
 import { ChevronDown } from "react-feather"
 import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
 import articleContent from '../src/article'
+import Demo from "../public/demo.png"
+
 const Logo = dynamic(() => import('./logo'), {
   ssr: false,
 })
@@ -36,7 +38,7 @@ export default function Home() {
   const firstSectionRef = useRef(null)
   const secondSectionRef = useRef(null)
   const [text, setText] = useState(articleContent)
-  const [circleRadius, setCircleRadius] = useState(100)
+  const [circleRadius, setCircleRadius] = useState(0)
 
   const handleScroll = () => {
     const element: any = secondSectionRef.current
@@ -44,7 +46,7 @@ export default function Home() {
       const secondPercentage = element.offsetTop / (2 * element.offsetHeight)
 
       if (secondPercentage === 0) {
-        if (Math.random() > 0.75) {
+        if (Math.random() > 0.5) {
           setText((text) => shuffle(text))
         }
 
@@ -97,10 +99,16 @@ export default function Home() {
 
         </section>
       </div>
+      <section className={styles.centered}>
+        <h2 className={styles.heading}>
+          Understand the world
+        </h2>
+        <p className={styles.paragraph}>With a detailed and structured summary of a topic, get a better comprehension of the arguments of the different sides. Whether you are an expert or a begginner, the summary will provide you the useful information to know what is happening on your phone.</p>
+          <Image className={styles.demo} src={Demo} alt="iPhone 14 Pro with Sophoz app" />
+      </section>
       <footer className={styles.footer}>
         <p>© 2023 Sophoz</p>
       </footer>
-
     </main>
   )
 }

@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import bloomberg from "../imgs/bloomberg.svg"
-import cnn from "../imgs/cnn-logo.svg"
-import foxnews from "../imgs/fox-news.svg"
-import wsj from "../imgs/wsj.svg"
-import wsp from "../imgs/wsp.svg"
-import politico from "../imgs/politico.svg"
-import huffpost from "../imgs/huffpost.svg"
-import time from "../imgs/time.png"
-import thenewyorker from "../imgs/thenewyorker.svg"
+import bloomberg from "../public/bloomberg.svg"
+import cnn from "../public/cnn-logo.svg"
+import foxnews from "../public/fox-news.svg"
+import wsj from "../public/wsj.svg"
+import wsp from "../public/wsp.svg"
+import politico from "../public/politico.svg"
+import huffpost from "../public/huffpost.svg"
+import time from "../public/time.png"
+import thenewyorker from "../public/thenewyorker.svg"
 import { useRef, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 const Logo = dynamic(() => import('./logo'), { ssr: false })

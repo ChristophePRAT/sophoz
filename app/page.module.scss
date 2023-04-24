@@ -5,7 +5,7 @@
   letter-spacing: 0.1rem;
   margin: -6vh 0;
   opacity: 0.8;
-  z-index: 1;
+  z-index: 3;
   font-family: var(--serif-font);
 }
 .noise {
@@ -167,6 +167,18 @@
   align-items: flex-start;
   text-align: left;
 }
+.centered {
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+.demo {
+  width: 60vmin;
+  object-fit: scale-down;
+  height: unset;
+  filter: drop-shadow(0 0 10px #999);
+}
+
 @media (max-width: 768px) {
   .main {
     overflow: hidden;
