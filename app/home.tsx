@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import styles from './page.module.scss'
 import { Playfair_Display, Inter } from "@next/font/google"
-import { ChevronDown } from "react-feather"
+import { ChevronDown, Zap } from "react-feather"
 import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
 import articleContent from '../src/article'
@@ -65,12 +65,21 @@ export default function Home() {
   return (
     <main className={mainStyles}>
       <section className={styles.topSection}>
-        <h2 className={styles.subtitle}>Introducing</h2>
         <div className={styles.noise}></div>
-        <h1 className={styles.title}>Sophoz</h1>
-        <h2 className={styles.heading}>Ordinary news for<br/> extraordinary people</h2>
+        <div className={styles.group}>
+          <h2 className={styles.subtitle}>Introducing</h2>
+          <h1 className={styles.title}>Sophoz</h1>
+          <h2 className={styles.heading}>Ordinary news for<br/> extraordinary people</h2>
+        </div>
+        <div className={styles.group}>
+          {/* This will be the most beautiful button ever designed*/}
+          <a className={styles.waitlist} href="https://tally.so/r/mDBjbZ">
+            Join waitlist
+            <Zap fill="black" />
+          </a>
+          <ChevronDown className={styles.chevron} size={48} />
+        </div>
       </section>
-      <ChevronDown className={styles.chevron} size={48} />
       <div className={styles.scrollSection}>
         <section className={styles.hardToReadSection} ref={firstSectionRef}>
           <div className={styles.left}>
