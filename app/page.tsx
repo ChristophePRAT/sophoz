@@ -116,6 +116,7 @@ export default function Home() {
           <Image className={styles.demo} src={Demo} alt="iPhone 14 Pro with Sophoz app" />
       </section>
       <footer className={styles.footer}>
+        <p>Created with ❤️ by 3 passionate students <br/ >Talel Benselma, Oscar Peret, Christophe Prat</p>
         <p>© 2023 Sophoz</p>
       </footer>
     </main>
