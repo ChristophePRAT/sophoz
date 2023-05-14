@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import styles from './page.module.scss'
 import { Playfair_Display, Inter } from "@next/font/google"
-import { ChevronDown, Zap } from "react-feather"
+import { ChevronDown, Zap, Instagram } from "react-feather"
 import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
 import articleContent from '../src/article'
@@ -116,6 +116,10 @@ export default function Home() {
           <Image className={styles.demo} src={Demo} alt="iPhone 14 Pro with Sophoz app" />
       </section>
       <footer className={styles.footer}>
+        <div className={styles.social}>
+          <p>Follow us on</p>
+          <a href="https://www.instagram.com/sophozfr/"><Instagram size={48} /></a>
+        </div>
         <p>Created with ❤️ by 3 passionate students <br/ >Talel Benselma, Oscar Peret, Christophe Prat</p>
         <p>© 2023 Sophoz</p>
       </footer>
