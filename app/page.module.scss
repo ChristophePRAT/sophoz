@@ -167,6 +167,7 @@
   line-height: 1.5;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  max-width: 800px;
   padding: 0 5rem;
 }
 
@@ -244,6 +245,10 @@
   margin: auto;
   position: relative;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .demo {
   width: 60vmin;

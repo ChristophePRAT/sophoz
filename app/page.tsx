@@ -69,7 +69,7 @@ export default function Home() {
         <div className={styles.group}>
           <h2 className={styles.subtitle}>Introducing</h2>
           <h1 className={styles.title}>Sophoz</h1>
-          <h2 className={styles.heading}>Ordinary news for<br/> extraordinary people</h2>
+          <h2 className={styles.heading}>Understand information, not an opinion</h2>
         </div>
         <div className={styles.group}>
           {/* This will be the most beautiful button ever designed*/}
@@ -85,8 +85,7 @@ export default function Home() {
           <div className={styles.left}>
             <h2 className={styles.heading}>Hard to read</h2>
             <p className={styles.paragraph}>
-              News can be overwhelming. Dozens of paragraphs to say nothing. It should not be this hard to get informed.
-
+              News can be overwhelming. Dozens of paragraphs to say nothing. It should not be this hard to get informed. Sophoz provides you with curated summaries of everyday news and so much more, all of this using the latest technologies.
             </p>
           </div>
           <div className={styles.right}>
@@ -99,7 +98,7 @@ export default function Home() {
           <div className={styles.right}>
             <h2 className={styles.heading}>Too sparse</h2>
             <p className={styles.paragraph}>
-              Information is everywhere. And so is misinformation.<br /> You deserve better news. Using AI, we will clear out the noise.
+              Information is everywhere. And so is misinformation.<br /> You deserve better news. Using AI, we will clear out the noise. <br />The Sophoz app, soon to be available on iOS, will give you access to multiple opinions on each subject.
             </p>
           </div>
           <div className={styles.left}>
