@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
 import articleContent from '../src/article'
 import Demo from "../public/demo.png"
+import Tiktok from "../public/tiktok-icon.svg"
 
 const Logo = dynamic(() => import('./logo'), {
   ssr: false,
@@ -16,6 +17,11 @@ const Logo = dynamic(() => import('./logo'), {
 const IconsGathering = dynamic(() => import('./iconsGathering'), {
   ssr: false,
 })
+
+const FAQSection = dynamic(() => import('./FAQSection'), {
+  ssr: false,
+})
+
 
 const garamond = Playfair_Display({
   variable: "--serif-font",
@@ -114,10 +120,21 @@ export default function Home() {
         <p className={styles.paragraph}>With a detailed and structured summary of a topic, get a better comprehension of the arguments of the different sides. Whether you are an expert or a begginner, the summary will provide you the useful information to know what is happening on your phone.</p>
           <Image className={styles.demo} src={Demo} alt="iPhone 14 Pro with Sophoz app" />
       </section>
+      <section className={styles.faqSection}>
+        <h2 className={styles.heading}>FAQ</h2>
+      <FAQSection />
+      </section>
+      <a className={styles.waitlistBlack} href="https://tally.so/r/mDBjbZ">
+        Join waitlist
+        <Zap fill="white" />
+      </a>
+
       <footer className={styles.footer}>
         <div className={styles.social}>
           <p>Follow us on</p>
-          <a href="https://www.instagram.com/sophozfr/"><Instagram size={48} /></a>
+          <a href="https://www.instagram.com/sophoz.app"><Instagram size={48} /></a>
+          <a href="https://www.tiktok.com/@sophoz_"><Image src={Tiktok} width={48} height={48} alt="Tiktok logo with link" /></a>
+
         </div>
         <p>Created with ❤️ by 3 passionate students <br/ >Talel Benselma, Oscar Peret, Christophe Prat</p>
         <p>© 2023 Sophoz</p>
