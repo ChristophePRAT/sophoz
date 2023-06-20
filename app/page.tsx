@@ -78,11 +78,13 @@ export default function Home() {
           <h2 className={styles.heading}>Understand information, not an opinion</h2>
         </div>
         <div className={styles.group}>
-          {/* This will be the most beautiful button ever designed*/}
-          <a className={styles.waitlist} href="https://tally.so/r/mDBjbZ">
-            Join waitlist
-            <Zap fill="black" />
-          </a>
+          <div className={styles.ctabuttons}>
+            {/* This will be the most beautiful button ever designed*/}
+            <a className={styles.waitlist} href="https://sophoz.substack.com/?r=1hqw68&utm_campaign=pub-share-checklist">
+              Free preview
+              <Zap fill="black" />
+            </a>
+          </div>
           <ChevronDown className={styles.chevron} size={48} />
         </div>
       </section>
