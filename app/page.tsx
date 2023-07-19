@@ -2,24 +2,25 @@
 import Image from 'next/image'
 import styles from './page.module.scss'
 import { Playfair_Display, Inter } from "@next/font/google"
-import { ChevronDown, Zap, Instagram } from "react-feather"
+import { ChevronDown, Zap, Instagram, ExternalLink } from "react-feather"
 import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
 import articleContent from '../src/article'
 import Demo from "../public/demo.png"
 import Tiktok from "../public/tiktok-icon.svg"
+import Link from "next/link"
 
 const Logo = dynamic(() => import('./logo'), {
-  ssr: false,
+  ssr: true,
 })
 
 // Import IconsGathering dynamically
 const IconsGathering = dynamic(() => import('./iconsGathering'), {
-  ssr: false,
+  ssr: true,
 })
 
 const FAQSection = dynamic(() => import('./FAQSection'), {
-  ssr: false,
+  ssr: true,
 })
 
 
@@ -78,11 +79,17 @@ export default function Home() {
           <h2 className={styles.heading}>Understand information, not an opinion</h2>
         </div>
         <div className={styles.group}>
-          <div className={styles.ctabuttons}>
-            {/* This will be the most beautiful button ever designed*/}
-            <a className={styles.waitlist} href="https://sophoz.substack.com/?r=1hqw68&utm_campaign=pub-share-checklist">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="m-2">
+              {/* This will be the most beautiful button ever designed*/}
+              <Link className={styles.waitlist} href="/balanced_news">
+                Generate your own articles
+                <Zap fill="black" />
+              </Link>
+            </div>
+            <a className="text-white text-lg text-center hover:opacity-70 m-2 font-medium inline-flex items-center transition transition-all" href="https://sophoz.substack.com/?r=1hqw68&utm_campaign=pub-share-checklist">
               Free preview
-              <Zap fill="black" />
+              <ExternalLink className="m-1" />
             </a>
           </div>
           <ChevronDown className={styles.chevron} size={48} />
