@@ -11,7 +11,7 @@ export default async function Login() {
     const email = String(formData.get('email'))
     const supabase = createServerActionClient<Database>({ cookies })
     const { data: { session } } = await supabase.auth.getSession()
-    const redirectURL = `${process.env.NODE_ENV == "production" ? "https://sophoz.app" : "http://localhost:3000"}/api/auth/callback`
+    const redirectURL = `${process.env.VERCEL_ENV == "production" ? "https://sophoz.app" : "http://localhost:3000"}/api/auth/callback`
     console.log(redirectURL)
     const { data, error } = await supabase.auth.signInWithOtp({
       email: email,
