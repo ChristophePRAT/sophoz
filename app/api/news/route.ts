@@ -14,7 +14,7 @@ async function getSearchResults(query: string) {
 	}
 	const baseURL = "https://api.search.brave.com/res/v1/web/search"
 	const urlComponent = encodeURIComponent(query);
-	const response = await fetch(`${baseURL}?q=${urlComponent}&result_filter=news`, {
+	const response = await fetch(`${baseURL}?q=${urlComponent}`, {
 		headers: {
 			"Accept-Encoding": "gzip",
 			"X-Subscription-Token": API_KEY
@@ -99,7 +99,12 @@ export async function GET(request: Request) {
 	}
 	try {
 		const data = await getSearchResults(query);
-		const results = data.news.results;
+		console.log(data)
+		const newsData = data.news || data.web;
+		if (!newsData.results) {
+			return new Response("No results", { status: 500 })
+		}
+		const results = newsData.results;
 		const promises = results.map((result: any) => {
 			console.log(`fetching ${result.url}`);
 			return retrieveText(result.url).then((text: string) => {
