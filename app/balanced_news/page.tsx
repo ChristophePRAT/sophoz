@@ -1,27 +1,29 @@
 "use client"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { redirect, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
 import type { Database } from '@/types/supabase'
 
 export default function Page() {
 	const supabase = createClientComponentClient()
-	const searchParams = useSearchParams()
+	const router = useRouter()
 
+	const searchParams = useSearchParams()
 	const search = searchParams.get('query')
 	const [query, setQuery] = useState(search || "")
+
 	const [articles, setArticles] = useState<any>([])
 	const [loadingText, setLoadingText] = useState("")
 
 	useEffect(() => {
 		(async () => {
 			const { data: { session } } = await supabase.auth.getSession()
-			if (!session) {
-				redirect("/login")
+			if (!session || !session.user) {
+				router.push('/login')
 			}
 		})()
-	}, [supabase])
+	}, [supabase, router])
 
 	useEffect(() => {
 		// Fetch data from supabase
@@ -135,17 +137,17 @@ export default function Page() {
 						return
 					}
 					setLoadingText("")
-					redirect(`/balanced_news?query=${search}`)
+					router.refresh()
 				} else {
 					setArticles(data)
 				}
 		})()
-	}, [search, supabase])
+	}, [search, supabase, router])
 
 	const handleSearch = async (formData: any) => {
 		formData.preventDefault()
 		const query = String(formData.target.query.value)
-		redirect(`/balanced_news?query=${query}`)
+		router.push(`/balanced_news?query=${query}`)
 	}
 
 	return (
