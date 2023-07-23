@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
 import { redirect,  } from 'next/navigation'
 import SubmitButton from "./SubmitButton"
-import Google from "/public/google.svg"
+import GoogleButton from "./GoogleButton"
 import Image from "next/image"
 
 import type { Database } from '@/types/supabase'
@@ -12,7 +12,7 @@ import type { Database } from '@/types/supabase'
 export default async function Login() {
   const supabase = createServerComponentClient<Database>({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
-  if (session && session.user) {
+  if (session) {
     redirect("/balanced_news")
   }
 
@@ -38,38 +38,13 @@ export default async function Login() {
     }
     revalidatePath("/login")
   }
-  const handleGoogleSignIn = async () => {
-    "use server";
-    console.log("fasopidfjaiposdjf")
-    const supabase = createServerActionClient<Database>({ cookies })
-
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
-        },
-
-      },
-    })
-
-    if (error) {
-      console.log(error)
-      return
-    }
-    if (data && data.url) {
-      redirect(data.url)
-    }
-    revalidatePath("/login")
-  }
 
   return (
     <div className="flex flex-col justify-center items-center m-auto h-screen w-screen">
       <h1 className="text-6xl font-bold text-center my-4">Login</h1>
       <h2 className="text-2xl text-center">Easily login using a magic link</h2>
       <form className="flex flex-col justify-center p-4 items-center" action={handleSendLink}>
-        <button className="p-2 rounded-xl m-2 text-md outline-none bg-gray-200 text-black w-96 flex justify-center items-center hover:bg-gray-300  transition transition-all" formAction={handleGoogleSignIn}><Image src={Google} alt="Google" width={24} height={24} className="mr-2" />Login with Google</button>
+        <GoogleButton />
         <p className="text-sm py-4 text-center text-gray-500 font-bold tracking-tight">OR</p>
         <div className="flex flex-row">
           <input type="email" placeholder="Enter email" className="p-2 rounded-xl m-2 text-md outline-none bg-gray-200 text-black w-96" name="email" />
