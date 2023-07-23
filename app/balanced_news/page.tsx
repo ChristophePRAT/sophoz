@@ -22,6 +22,7 @@ export default function Page() {
 			if (!session || !session.user) {
 				router.push('/login')
 			}
+			console.log(session)
 		})()
 	}, [supabase, router])
 
@@ -150,8 +151,14 @@ export default function Page() {
 		router.push(`/balanced_news?query=${query}`)
 	}
 
+	const handleSignOut = async () => {
+		await supabase.auth.signOut()
+		router.push('/login')
+	}
+
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+			<button className="text-red-500 hover:text-red-600 absolute top-0 right-0 m-4" onClick={handleSignOut}>Sign out</button>
 			<h1 className="text-6xl font-bold">Balanced news</h1>
 			<h2 className="text-2xl m-2">A news aggregator that shows you both sides of the story</h2>
 			<h3 className="text-lg mb-4">Available in English only</h3>

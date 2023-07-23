@@ -9,30 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.4.10",
+    "@next/font": "^13.4.12",
     "@supabase/auth-helpers-nextjs": "^0.7.3",
     "@supabase/supabase-js": "^2.26.0",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.31",
-    "@types/react-dom": "18.0.11",
+    "@types/node": "20.4.4",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.0.1",
     "cheerio": "1.0.0-rc.12",
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
     "feather-icons": "^4.29.0",
     "he": "^1.2.0",
-    "next": "13.4.10",
+    "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
-    "sass": "^1.63.6",
-    "typescript": "5.0.3"
+    "sass": "^1.64.1",
+    "typescript": "5.1.6"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.4",
     "@types/he": "^1.2.0",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.26",
+    "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
   }
 }

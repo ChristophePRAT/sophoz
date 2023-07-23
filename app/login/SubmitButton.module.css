@@ -1,0 +1,7 @@
+.primary {
+	@apply p-2 rounded-xl m-2 outline-none bg-red-500 w-fit px-8 text-white font-medium cursor-pointer hover:opacity-80;
+}
+
+.secondary {
+	@apply p-2 rounded-xl m-2 px-8 outline-none bg-gray-500 w-fit text-white font-medium cursor-pointer;
+}
