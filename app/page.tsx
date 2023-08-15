@@ -1,6 +1,7 @@
-"use client" import Image from 'next/image'
+"use client" 
+import Image from 'next/image'
 import styles from './page.module.scss'
-import { Playfair_Display, Inter } from "@next/font/google"
+import { Playfair_Display, Inter } from "next/font/google"
 import { ChevronDown, Zap, Instagram, ExternalLink } from "react-feather"
 import dynamic from 'next/dynamic'
 import { useRef, useEffect, useState, useMemo } from 'react'
