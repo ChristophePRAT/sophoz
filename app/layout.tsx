@@ -8,7 +8,6 @@ export const metadata = {
   icons: {
     icon: "/Sophoz logo.jpg",
     apple: "/favicon_io/apple-touch-icon.png",
-    android: "/favicon_io/android-chrome-192x192.png",
   },
   colorScheme: "light",
   themeColor: "#E54B4B",

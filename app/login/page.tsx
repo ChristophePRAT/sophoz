@@ -42,7 +42,9 @@ export default async function Login() {
   return (
     <div className="flex flex-col justify-center items-center m-auto h-screen w-screen">
       <h1 className="text-6xl font-bold text-center my-4">Login</h1>
+      {/*
       <GoogleButton />
+      */}
       <p className="text-sm py-4 text-center text-gray-500 font-bold tracking-tight">OR</p>
       <form className="flex flex-col justify-center p-4 items-center" action={handleSendLink}>
         <input type="email" placeholder="Enter email" className="p-2 rounded-xl m-2 text-md outline-none bg-gray-200 text-black w-96" name="email" />

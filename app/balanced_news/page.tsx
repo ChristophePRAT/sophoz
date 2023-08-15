@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import type { Database } from '@/types/supabase'
 
 export default function Page() {
-	const supabase = createClientComponentClient()
+	const supabase = createClientComponentClient<Database>()
 	const router = useRouter()
 
 	const searchParams = useSearchParams()

@@ -1,5 +1,4 @@
-"use client"
-import Image from 'next/image'
+"use client" import Image from 'next/image'
 import styles from './page.module.scss'
 import { Playfair_Display, Inter } from "@next/font/google"
 import { ChevronDown, Zap, Instagram, ExternalLink } from "react-feather"
@@ -145,7 +144,8 @@ export default function Home() {
           <a href="https://www.tiktok.com/@sophoz_"><Image src={Tiktok} width={48} height={48} alt="Tiktok logo with link" /></a>
 
         </div>
-        <p>Created with ❤️ by 3 passionate students <br/ >Talel Benselma, Oscar Peret, Christophe Prat</p>
+        <p>Created with ❤️ by 3 passionate students <br/ >Talel Ben Selma, Oscar Peret, Christophe Prat</p>
+        <Link href="/legal">Legal</Link>
         <p>© 2023 Sophoz</p>
       </footer>
     </main>
