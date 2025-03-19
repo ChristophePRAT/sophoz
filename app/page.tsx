@@ -80,13 +80,6 @@ export default function Home() {
         </div>
         <div className={styles.group}>
           <div className="flex flex-col md:flex-row items-center">
-            <div className="m-2">
-              {/* This will be the most beautiful button ever designed*/}
-              <Link className={styles.waitlist} href="/balanced_news">
-                Generate your own articles
-                <Zap fill="black" />
-              </Link>
-            </div>
             <a className="text-white text-lg text-center hover:opacity-70 m-2 font-medium inline-flex items-center transition transition-all" href="https://sophoz.substack.com/?r=1hqw68&utm_campaign=pub-share-checklist">
               Free preview
               <ExternalLink className="m-1" />
