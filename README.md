@@ -1,38 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sophoz
+## TL;DR
+No longer maintained 😢 due to lack of time, because of the CPGE. This was a sketch of a project we wanted to build
 
-## Getting Started
+## Motivation
+This began as a side project in Terminale (in 2023) with 2 friends. 
 
-First, run the development server:
+Here is the analysis of the news landscape we had:
+### News are unappealing for teenagers
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This was, and still is, a major issue for us. We think that news are too long to read and difficult to understand for teenagers. We wanted to build a simple medium for people in high schools to be informed daily about the news.
+### News are often very biased 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+We also wanted to tackle the issue of the bias when reading news. The [Valeurs actuelles](https://fr.wikipedia.org/wiki/Valeurs_actuelles) and the [Libération](https://fr.wikipedia.org/wiki/Lib%C3%A9ration_(journal)) newspapers deal with the same subjects but have **strongly different** viewpoints. Unless you read the 2, it wil be difficult to understand the news objectively.
+### New format
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We wanted to create a new format for reading news. Our roadmap was to first build a text-based app then add diagrams and mind maps to have a concise but precise summary of the daily/weekly news. Our goal was to use LLMs to build fast, reliable (-ish), and coherent news analyses.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[This website](https://sophoz.vercel.app/) was our landing page at we used it to have an idea of who could be interested. We added a form to sign up for weekly news of Sophoz and had roughly 30 users. We stopped the project because we all chose intensive paths following high schools and did not have time to continue. 
